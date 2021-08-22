@@ -19,10 +19,14 @@
 }
 
 body {
-  background: var(--dark-blue);
+  background: linear-gradient(var(--dark-blue), transparent 450%),
+    radial-gradient(circle at 100% 85%, var(--yellow), transparent 85%),
+    radial-gradient(circle at 0% 85%, var(--pink), transparent 85%);
+  height: 100vh;
 }
 
 h1 {
   color: var(--yellow);
   font-family: "Acme", sans-serif;
+  margin: 0;
 }
