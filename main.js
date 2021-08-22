@@ -8,9 +8,22 @@ const library = [
 
 const libraryNode = document.getElementById("library");
 
-function Book(title) {
+function Book(author, coverImage, pages, read, title) {
+  this.author = author;
+  this.coverImage = coverImage;
+  this.pages = pages;
+  this.read = read;
   this.title = title;
 }
+
+Book.prototype = {
+  deleteBook: () => {
+    console.log("deleteBook is called");
+  },
+  toggleReadStatus: () => {
+    console.log("toggleReadStatus is called");
+  },
+};
 
 function addBookToLibrary(book) {
   library.push(book);
@@ -18,7 +31,7 @@ function addBookToLibrary(book) {
 
 function displayBooks() {
   library.forEach((book) => {
-    appendToLibraryNode(createBookNode(book));
+    libraryNode.append(createBookNode(book));
   });
 }
 
@@ -28,10 +41,6 @@ function createBookNode(book) {
   bookNode.append(`${book.title}`);
 
   return bookNode;
-}
-
-function appendToLibraryNode(bookNode) {
-  libraryNode.append(bookNode);
 }
 
 displayBooks();
