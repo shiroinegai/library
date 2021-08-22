@@ -53,7 +53,7 @@ h2 {
 }
 
 .book-wrapper {
-  height: clamp(15rem, 33vh, 25rem);
+  height: clamp(15rem, 35vh, 30rem);
   position: relative;
 }
 
@@ -87,4 +87,11 @@ img {
 .book-synopsis {
   height: 0;
   overflow: hidden;
+}
+
+footer p {
+  color: var(--dark-blue);
+  font-family: "Acme", sans-serif;
+  margin: 2em 0;
+  text-align: center;
 }
