@@ -129,6 +129,11 @@ function createBookNode(book) {
   title.append(book.title);
   detail.append(title);
 
+  const pages = document.createElement("p");
+  pages.classList.add("book-pages");
+  pages.append(`${book.pages} pages`);
+  detail.append(pages);
+
   const author = document.createElement("p");
   author.classList.add("book-author");
   author.append(book.author);
