@@ -19,9 +19,13 @@
 }
 
 body {
-  background: linear-gradient(var(--dark-blue), transparent 450%),
-    radial-gradient(circle at 100% 85%, var(--yellow), transparent 85%),
-    radial-gradient(circle at 0% 85%, var(--pink), transparent 85%);
+  background: var(--dark-blue);
+  background: linear-gradient(var(--dark-blue), transparent),
+    radial-gradient(circle at 0 0, var(--dark-blue), transparent),
+    radial-gradient(circle at 50% 0, var(--dark-blue), transparent 125%),
+    radial-gradient(circle at 100% 0, var(--dark-blue), transparent),
+    radial-gradient(circle at 100% 100%, var(--yellow), transparent),
+    radial-gradient(circle at 0% 100%, var(--pink), transparent);
   height: 100vh;
 }
 
