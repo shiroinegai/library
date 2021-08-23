@@ -40,9 +40,9 @@ h1 {
   padding: 1rem;
 }
 
-h2 {
+.book-title {
   font-size: 1.125rem;
-  text-shadow: 0 0 0.25em var(--darker-blue), 0 0 0.125em var(--darker-blue);
+  text-shadow: 0 0 0.25em var(--dark-blue), 0 0 0.125em var(--dark-blue);
 }
 
 #library {
@@ -154,6 +154,7 @@ img {
 
 .book-author {
   color: var(--yellow);
+  text-shadow: 0 0 0.25em var(--dark-blue), 0 0 0.125em var(--dark-blue);
 }
 
 .book-synopsis {
