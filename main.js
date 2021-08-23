@@ -156,6 +156,60 @@ function createBookNode(book) {
 
   bookNode.append(wrapper);
 
+  const buttons = document.createElement("div");
+  buttons.classList.add("book-buttons");
+
+  const toggleFavourite = document.createElement("button");
+  toggleFavourite.classList.add("toggle-favourite");
+
+  const xmlns = "http://www.w3.org/2000/svg";
+  const starSVG = document.createElementNS(xmlns, "svg");
+  starSVG.setAttributeNS(null, "enable-background", "new 0 0 24 24");
+  starSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
+  const g1 = document.createElementNS(xmlns, "g");
+  const path1 = document.createElementNS(xmlns, "path");
+  path1.setAttributeNS(null, "d", "M0,0h24v24H0V0z");
+  path1.setAttributeNS(null, "fill", "none");
+  const path2 = document.createElementNS(xmlns, "path");
+  path1.setAttributeNS(null, "d", "M0,0h24v24H0V0z");
+  path1.setAttributeNS(null, "fill", "none");
+  g1.append(path1);
+  g1.append(path2);
+  const g2 = document.createElementNS(xmlns, "g");
+  const path3 = document.createElementNS(xmlns, "path");
+  path3.setAttributeNS(
+    null,
+    "d",
+    "M12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.72l3.67-3.18c0.67-0.58,0.31-1.68-0.57-1.75l-4.83-0.41 l-1.89-4.46c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75l3.67,3.18l-1.1,4.72 c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27z"
+  );
+  g2.append(path3);
+  starSVG.append(g1);
+  starSVG.append(g2);
+  toggleFavourite.append(starSVG);
+
+  const toggleRead = document.createElement("button");
+  toggleRead.classList.add("toggle-read");
+
+  const tickSVG = document.createElementNS(xmlns, "svg");
+  tickSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
+  const path4 = document.createElementNS(xmlns, "path");
+  path4.setAttributeNS(null, "path", "M0 0h24v24H0V0z");
+  path4.setAttributeNS(null, "fill", "none");
+  const path5 = document.createElementNS(xmlns, "path");
+  path5.setAttributeNS(
+    null,
+    "d",
+    "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.88-11.71L10 14.17l-1.88-1.88c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7c.39-.39.39-1.02 0-1.41-.39-.39-1.03-.39-1.42 0z"
+  );
+  tickSVG.append(path4);
+  tickSVG.append(path5);
+  toggleRead.append(tickSVG);
+
+  buttons.append(toggleFavourite);
+  buttons.append(toggleRead);
+
+  bookNode.append(buttons);
+
   return bookNode;
 }
 

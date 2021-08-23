@@ -85,12 +85,12 @@ article {
     drop-shadow(0 0 0.125em var(--dark-blue));
 }
 
-.toggle-read {
-  fill: var(--green);
-}
-
 .toggle-favourite {
   fill: var(--yellow);
+}
+
+.toggle-read {
+  fill: var(--green);
 }
 
 img {
