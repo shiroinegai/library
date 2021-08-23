@@ -178,6 +178,7 @@ img {
 }
 
 .book-is-open {
+  cursor: auto !important;
   position: fixed;
   z-index: 1;
   bottom: 0;
@@ -200,6 +201,11 @@ img {
 
 .book-is-open .book-synopsis {
   height: auto;
+}
+
+.book-is-open .book-synopsis p {
+  max-height: 25vh;
+  overflow: scroll;
 }
 
 footer p {
