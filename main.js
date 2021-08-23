@@ -161,6 +161,9 @@ function createBookNode(book) {
 
   const toggleFavourite = document.createElement("button");
   toggleFavourite.classList.add("toggle-favourite");
+  if (book.favourite) {
+    toggleFavourite.classList.toggle("toggle-true");
+  }
 
   const xmlns = "http://www.w3.org/2000/svg";
   const starSVG = document.createElementNS(xmlns, "svg");
@@ -189,6 +192,9 @@ function createBookNode(book) {
 
   const toggleRead = document.createElement("button");
   toggleRead.classList.add("toggle-read");
+  if (book.read) {
+    toggleRead.classList.toggle("toggle-true");
+  }
 
   const tickSVG = document.createElementNS(xmlns, "svg");
   tickSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
