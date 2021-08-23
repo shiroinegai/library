@@ -117,6 +117,11 @@ article:active img {
   fill: var(--green);
 }
 
+.remove {
+  display: none;
+  fill: var(--pink);
+}
+
 .toggle-true {
   opacity: 1 !important;
 }
@@ -186,6 +191,11 @@ img {
 
 .book-is-open .book-detail {
   padding: 1em;
+}
+
+.book-is-open .remove {
+  display: initial;
+  opacity: 0.4;
 }
 
 .book-is-open .book-synopsis {

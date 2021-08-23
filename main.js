@@ -109,11 +109,13 @@ function displayBooks() {
 }
 
 function createBookNode(book) {
+  const uuid = uuidv4();
+
   const bookNode = document.createElement("article");
   bookNode.addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("book-is-open");
   });
-  bookNode.setAttribute("data-index", uuidv4());
+  bookNode.setAttribute("data-index", uuid);
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("book-wrapper");
@@ -214,8 +216,28 @@ function createBookNode(book) {
   tickSVG.append(path5);
   toggleRead.append(tickSVG);
 
+  const remove = document.createElement("button");
+  remove.classList.add("remove");
+  remove.setAttribute("data-remove-index", uuid);
+
+  const binSVG = document.createElementNS(xmlns, "svg");
+  binSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
+  const path6 = document.createElementNS(xmlns, "path");
+  path6.setAttributeNS(null, "path", "M0 0h24v24H0V0z");
+  path6.setAttributeNS(null, "fill", "none");
+  const path7 = document.createElementNS(xmlns, "path");
+  path7.setAttributeNS(
+    null,
+    "d",
+    "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"
+  );
+  binSVG.append(path6);
+  binSVG.append(path7);
+  remove.append(binSVG);
+
   buttons.append(toggleFavourite);
   buttons.append(toggleRead);
+  buttons.append(remove);
 
   bookNode.append(buttons);
 
