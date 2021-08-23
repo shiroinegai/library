@@ -110,6 +110,9 @@ function displayBooks() {
 
 function createBookNode(book) {
   const bookNode = document.createElement("article");
+  bookNode.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("book-is-open");
+  });
   bookNode.setAttribute("data-index", uuidv4());
 
   const wrapper = document.createElement("div");
