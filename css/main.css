@@ -52,13 +52,18 @@ h2 {
   padding: 0 1em;
 }
 
-.book-wrapper {
-  height: clamp(15rem, 35vh, 30rem);
+article {
+  overflow: hidden;
   position: relative;
 }
 
-article {
-  overflow: hidden;
+article:hover img,
+article:active img {
+  scale: 1.125;
+}
+
+.book-wrapper {
+  height: clamp(15rem, 35vh, 30rem);
   position: relative;
 }
 
@@ -76,6 +81,13 @@ article {
   border: none;
   width: 2rem;
   height: 2rem;
+  opacity: 0.6;
+}
+
+.book-buttons button:hover,
+.book-buttons button:focus {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .book-buttons svg {
@@ -97,6 +109,7 @@ img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: all ease-out 0.25s;
 }
 
 .book-detail {
@@ -117,11 +130,10 @@ img {
   color: var(--yellow);
   width: max-content;
   padding: 0.25em 0.375em;
-  margin-bottom: 6%;
   border-left: 0.25em solid var(--blue);
   border-radius: 0.25em;
   order: -1;
-  transform: rotate(-8deg);
+  transform: rotate(-8deg) translateY(-0.5em);
 }
 
 .book-author {
