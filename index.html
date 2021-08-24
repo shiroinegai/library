@@ -19,24 +19,28 @@
     <div class="form-modal">
       <form>
         <h2>New book</h2>
-        <label for="title">Title</label>
-        <input id="title" type="text" />
-        <label for="author">Author</label>
-        <input id="author" type="text" />
-        <label for="pages">Pages</label>
-        <input id="pages" type="number" min="0" />
-        <label for="coverImage">Cover image URL</label>
-        <input id="coverImage" type="url" />
-        <label for="synopsis">Synopsis</label>
-        <textarea id="synopsis" rows="3"></textarea>
-        <label for="favourite">
-          <input id="favourite" type="checkbox" />
-          Add to favourites
-        </label>
-        <label for="read">
-          <input id="read" type="checkbox" />
-          Mark as read
-        </label>
+        <div class="form-segment">
+          <label for="title">Title</label>
+          <input id="title" type="text" />
+          <label for="author">Author</label>
+          <input id="author" type="text" />
+          <label for="pages">Pages</label>
+          <input id="pages" type="number" min="0" />
+          <label for="coverImage">Cover image URL</label>
+          <input id="coverImage" type="url" />
+          <label for="synopsis">Synopsis</label>
+          <textarea id="synopsis" rows="3"></textarea>
+        </div>
+        <div class="form-actions">
+          <label for="favourite">
+            <input id="favourite" type="checkbox" />
+            Add to favourites
+          </label>
+          <label for="read">
+            <input id="read" type="checkbox" />
+            Mark as read
+          </label>
+        </div>
         <div class="form-actions">
           <input type="submit" value="Add to library" />
           <button class="cancel">Cancel</button>

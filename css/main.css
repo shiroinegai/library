@@ -241,13 +241,18 @@ img {
 }
 
 form {
-  display: flex;
-  flex-direction: column;
   padding: 2em;
   margin-top: auto;
-  width: 100%;
   background: var(--dark-blue);
   border-top: 0.125em dashed var(--pink);
+}
+
+.form-segment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  max-height: 13.375rem;
+  overflow: scroll;
 }
 
 form h2 {
@@ -273,7 +278,7 @@ label[for="read"] {
 }
 
 #pages {
-  width: 9ch;
+  width: 8ch;
 }
 
 * + label {
@@ -295,18 +300,36 @@ textarea {
 
 textarea {
   resize: none;
+  min-height: 10vh;
+  margin-bottom: 0.125em;
 }
 
 input[type="text"]:focus,
-input[type="number"]:focus,
 input[type="url"]:focus,
 textarea:focus {
   outline: 0.125em solid var(--green);
+  margin-left: 0.125em;
+  margin-right: 0.125em;
+}
+
+input[type="number"]:focus {
+  outline: 0.125em solid var(--green);
+  margin-left: 0.125em;
+}
+
+textarea:focus {
+  margin-bottom: 0.125em;
 }
 
 .form-actions {
   margin-top: 1.375em;
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-actions label {
+  margin: 0;
 }
 
 input[type="submit"],
@@ -327,7 +350,6 @@ input[type="submit"] {
 .cancel {
   border: 0.125em dashed var(--pink);
   color: var(--pink);
-  margin-left: auto;
 }
 
 footer p {
