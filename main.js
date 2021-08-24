@@ -6,6 +6,7 @@ const library = [
     coverImage:
       "https://kbimages1-a.akamaihd.net/9b90e481-4b79-47e1-a919-3d0a46752177/chainsaw-man-vol-1.webp",
     favourite: false,
+    id: "test-id-1",
     pages: 191,
     read: true,
     synopsis: `Denji’s a poor young man who’ll do anything for money, even hunting down devils with his pet devil-dog Pochita. He’s a simple man with simple dreams, drowning under a mountain of debt. But his sad life gets turned upside down one day when he’s betrayed by someone he trusts. Now with the power of a devil inside him, Denji’s become a whole new man—Chainsaw Man!`,
@@ -16,6 +17,7 @@ const library = [
     coverImage:
       "https://kbimages1-a.akamaihd.net/cc983110-b588-4fdf-8d43-f63878c75249/jujutsu-kaisen-vol-1.webp",
     favourite: false,
+    id: "test-id-2",
     pages: 191,
     read: false,
     synopsis: `Although Yuji Itadori looks like your average teenager, his immense physical strength is something to behold! Every sports club wants him to join, but Itadori would rather hang out with the school outcasts in the Occult Research Club. One day, the club manages to get their hands on a sealed cursed object. Little do they know the terror they’ll unleash when they break the seal…`,
@@ -26,6 +28,7 @@ const library = [
     coverImage:
       "https://kbimages1-a.akamaihd.net/92e8c5b0-74dd-489f-afd2-eefe8a9d6847/one-punch-man-vol-1.webp",
     favourite: false,
+    id: "test-id-3",
     pages: 200,
     read: true,
     synopsis: `Every time a promising villain appears, Saitama beats the snot out of ’em with one punch! Can he finally find an opponent who can go toe-to-toe with him and give his life some meaning? Or is he doomed to a life of superpowered boredom?`,
@@ -36,6 +39,7 @@ const library = [
     coverImage:
       "https://kbimages1-a.akamaihd.net/acd19c74-1ae9-49ef-9da2-e0221a3fff50/kaguya-sama-love-is-war-vol-1.webp",
     favourite: true,
+    id: "test-id-4",
     pages: 213,
     read: true,
     synopsis: `As leaders of their prestigious academy’s student council, Kaguya and Miyuki are the elite of the elite! But it’s lonely at the top… Luckily for them, they’ve fallen in love! There’s just one problem—they both have too much pride to admit it. And so begins the daily scheming to get the object of their affection to confess their romantic feelings first… Love is a war you win by losing.`,
@@ -46,6 +50,7 @@ const library = [
     coverImage:
       "https://kbimages1-a.akamaihd.net/7cf1f46a-ad09-41d1-815a-54340639bc1f/don-t-toy-with-me-miss-nagatoro-1.webp",
     favourite: false,
+    id: "test-id-5",
     pages: 160,
     read: false,
     synopsis: `Nagatoro is a freshman in high school who loves teasing and torturing her older male classmate (Senpai). What is her motivation and why does Senpai put up with her?Does Nagatoro just want to create misery for Senpai? Or maybe she secretly likes him?`,
@@ -56,6 +61,7 @@ const library = [
     coverImage:
       "https://kbimages1-a.akamaihd.net/467fde9d-021c-4d37-b172-aa62b80a7ffa/the-quintessential-quintuplets-1.webp",
     favourite: false,
+    id: "test-id-6",
     pages: 192,
     read: false,
     synopsis: `One day, a poor high school second-year named Futaro Uesugi comes across a private tutoring gig with good pay. But his pupils are his classmates!! And they’re quintuplets!! They’re all gorgeous girls, but they’re troublemakers who hate to study and are on the verge of flunking out! And his first task is simply gaining the sisters’ trust?! Every day is a party! The curtain is rising on the Nakano quintuplets’ quirky romantic comedy with five times the cute!!`,
@@ -66,10 +72,22 @@ const library = [
     coverImage:
       "https://kbimages1-a.akamaihd.net/27e0f19d-ca0a-4eba-b4f6-7a702bd70fde/rent-a-girlfriend-1.webp",
     favourite: true,
+    id: "test-id-7",
     pages: 208,
     read: true,
-    synopsis: `You can rent a girlfriend, but can you buy love? Reeling from a bad breakup, Kazuya rents the beautiful, polite Chizuru for a date. But rock bottom might be so much lower than he thought! Chizuru is much more than the pretty face and sweet demeanor he thought he’d bargained for…In today’s Japan, “rental” services can deliver an afternoon with a “friend,” a “parent,” even a fake girlfriend! After a staggering betrayal by his girlfriend, hapless freshman Kazuya gets just desperate enough to give it a try. But he quickly discovers how complicated it can be to “rent” an emotional connection, and his new “girlfriend,” who’s trying to keep her side hustle secret, will panic when she finds out her real life and Kazuya’s are intertwined in surprising ways! Family, school, and life all start to go wrong, too… It’s sweet but naïve boy meets cute but ruthless girl in this 21st-century manga rom-com!`,
+    synopsis: `You can rent a girlfriend, but can you buy love? Reeling from a bad breakup, Kazuya rents the beautiful, polite Chizuru for a date. But rock bottom might be so much lower than he thought! Chizuru is much more than the pretty face and sweet demeanor he thought he’d bargained for… In today’s Japan, “rental” services can deliver an afternoon with a “friend,” a “parent,” even a fake girlfriend! After a staggering betrayal by his girlfriend, hapless freshman Kazuya gets just desperate enough to give it a try. But he quickly discovers how complicated it can be to “rent” an emotional connection, and his new “girlfriend,” who’s trying to keep her side hustle secret, will panic when she finds out her real life and Kazuya’s are intertwined in surprising ways! Family, school, and life all start to go wrong, too… It’s sweet but naïve boy meets cute but ruthless girl in this 21st-century manga rom-com!`,
     title: "Rent-A-Girlfriend",
+  },
+  {
+    author: "Fuse",
+    coverImage:
+      "https://kbimages1-a.akamaihd.net/22460ce8-ea38-40c6-a514-6b58338e063a/that-time-i-got-reincarnated-as-a-slime-1-1.webp",
+    favourite: true,
+    id: "test-id-8",
+    pages: 240,
+    read: true,
+    synopsis: `As players of Monster Hunter and Dungeons & Dragons know, the slime is not exactly the king of the fantasy monsters. So when a 37-year-old Tokyo salaryman dies and wakes up in a world of dragons and magic, he’s a little disappointed to find he’s become a blind, boneless slime monster. Mikami’s middle age hasn’t gone as he planned: He never found a girlfriend, he got stuck in a dead-end job, and he was abruptly stabbed to death in the street at 37. So when he wakes up in a new world straight out of a fantasy RPG, he’s disappointed but not exactly surprised to find that he’s not a knight or a wizard but a blind slime demon. But there are chances for even a slime to become a hero…`,
+    title: "That Time I got Reincarnated as a Slime",
   },
 ];
 
@@ -109,13 +127,11 @@ function displayBooks() {
 }
 
 function createBookNode(book) {
-  const uuid = uuidv4();
-
   const bookNode = document.createElement("article");
   bookNode.addEventListener("click", (e) => {
-    e.currentTarget.classList.toggle("book-is-open");
+    e.currentTarget.classList.add("book-is-open");
   });
-  bookNode.setAttribute("data-index", uuid);
+  bookNode.setAttribute("data-index", book.id);
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("book-wrapper");
@@ -168,6 +184,11 @@ function createBookNode(book) {
 
   // close button --start--
   const close = document.createElement("button");
+  close.addEventListener("click", (e) => {
+    const target = document.querySelector(`[data-index='${book.id}']`);
+    target.classList.remove("book-is-open");
+    e.stopPropagation();
+  });
   close.classList.add("close");
 
   const crossSVG = document.createElementNS(xmlns, "svg");
@@ -224,7 +245,7 @@ function createBookNode(book) {
   // remove button --start--
   const remove = document.createElement("button");
   remove.classList.add("remove");
-  remove.setAttribute("data-remove-index", uuid);
+  remove.setAttribute("data-remove-index", book.id);
 
   const binSVG = document.createElementNS(xmlns, "svg");
   binSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
