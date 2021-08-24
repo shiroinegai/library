@@ -16,28 +16,30 @@
   <body>
     <h1>Library</h1>
     <main id="library"></main>
-    <form>
-      <h2>New book</h2>
-      <label for="title">Title</label>
-      <input id="title" type="text" />
-      <label for="author">Author</label>
-      <input id="author" type="text" />
-      <label for="pages">Pages</label>
-      <input id="pages" type="number" />
-      <label for="coverImage">Cover image</label>
-      <input id="coverImage" type="url" />
-      <label for="synopsis">Synopsis</label>
-      <textarea id="synopsis"></textarea>
-      <label for="favourite">
-        <input id="favourite" type="checkbox" />
-        Add to favourites
-      </label>
-      <label for="read">
-        <input id="read" type="checkbox" />
-        Mark as read
-      </label>
-      <input type="submit" value="Add to library" />
-    </form>
+    <div class="form-modal">
+      <form>
+        <h2>New book</h2>
+        <label for="title">Title</label>
+        <input id="title" type="text" />
+        <label for="author">Author</label>
+        <input id="author" type="text" />
+        <label for="pages">Pages</label>
+        <input id="pages" type="number" min="0" />
+        <label for="coverImage">Cover image URL</label>
+        <input id="coverImage" type="url" />
+        <label for="synopsis">Synopsis</label>
+        <textarea id="synopsis" rows="3"></textarea>
+        <label for="favourite">
+          <input id="favourite" type="checkbox" />
+          Add to favourites
+        </label>
+        <label for="read">
+          <input id="read" type="checkbox" />
+          Mark as read
+        </label>
+        <input type="submit" value="Add to library" />
+      </form>
+    </div>
     <footer>
       <p>Created by Shiroi Negai 💮</p>
     </footer>
