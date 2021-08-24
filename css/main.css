@@ -297,16 +297,30 @@ textarea {
   resize: none;
 }
 
-input[type="submit"] {
+.form-actions {
+  margin-top: 1.375em;
+  display: flex;
+}
+
+input[type="submit"],
+.cancel {
   background: transparent;
-  border: 0.125em dashed var(--yellow);
-  color: var(--yellow);
   cursor: pointer;
   font-family: "Acme", sans-serif;
   font-size: 1.125rem;
-  margin-top: 1em;
   padding: 0.375em 0.625em;
   width: max-content;
+}
+
+input[type="submit"] {
+  border: 0.125em dashed var(--yellow);
+  color: var(--yellow);
+}
+
+.cancel {
+  border: 0.125em dashed var(--pink);
+  color: var(--pink);
+  margin-left: auto;
 }
 
 footer p {
