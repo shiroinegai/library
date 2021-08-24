@@ -164,77 +164,81 @@ function createBookNode(book) {
   const buttons = document.createElement("div");
   buttons.classList.add("book-buttons");
 
+  const xmlns = "http://www.w3.org/2000/svg";
+
+  // close button --start--
+  const close = document.createElement("button");
+  close.classList.add("close");
+
+  const crossSVG = document.createElementNS(xmlns, "svg");
+  crossSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
+  const crossPath = document.createElementNS(xmlns, "path");
+  crossPath.setAttributeNS(
+    null,
+    "d",
+    "M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"
+  );
+  crossSVG.append(crossPath);
+  close.append(crossSVG);
+  // close button --end--
+
+  // favourite button --start--
   const toggleFavourite = document.createElement("button");
   toggleFavourite.classList.add("toggle-favourite");
-  if (book.favourite) {
-    toggleFavourite.classList.toggle("toggle-true");
-  }
 
-  const xmlns = "http://www.w3.org/2000/svg";
   const starSVG = document.createElementNS(xmlns, "svg");
+  if (book.favourite) {
+    starSVG.classList.toggle("toggle-true");
+  }
   starSVG.setAttributeNS(null, "enable-background", "new 0 0 24 24");
   starSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
-  const g1 = document.createElementNS(xmlns, "g");
-  const path1 = document.createElementNS(xmlns, "path");
-  path1.setAttributeNS(null, "d", "M0,0h24v24H0V0z");
-  path1.setAttributeNS(null, "fill", "none");
-  const path2 = document.createElementNS(xmlns, "path");
-  path1.setAttributeNS(null, "d", "M0,0h24v24H0V0z");
-  path1.setAttributeNS(null, "fill", "none");
-  g1.append(path1);
-  g1.append(path2);
-  const g2 = document.createElementNS(xmlns, "g");
-  const path3 = document.createElementNS(xmlns, "path");
-  path3.setAttributeNS(
+  const starPath = document.createElementNS(xmlns, "path");
+  starPath.setAttributeNS(
     null,
     "d",
     "M12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.72l3.67-3.18c0.67-0.58,0.31-1.68-0.57-1.75l-4.83-0.41 l-1.89-4.46c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75l3.67,3.18l-1.1,4.72 c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27z"
   );
-  g2.append(path3);
-  starSVG.append(g1);
-  starSVG.append(g2);
+  starSVG.append(starPath);
   toggleFavourite.append(starSVG);
+  // favourite button --end--
 
+  // read button --start--
   const toggleRead = document.createElement("button");
   toggleRead.classList.add("toggle-read");
-  if (book.read) {
-    toggleRead.classList.toggle("toggle-true");
-  }
 
   const tickSVG = document.createElementNS(xmlns, "svg");
+  if (book.read) {
+    tickSVG.classList.toggle("toggle-true");
+  }
   tickSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
-  const path4 = document.createElementNS(xmlns, "path");
-  path4.setAttributeNS(null, "path", "M0 0h24v24H0V0z");
-  path4.setAttributeNS(null, "fill", "none");
-  const path5 = document.createElementNS(xmlns, "path");
-  path5.setAttributeNS(
+  const tickPath = document.createElementNS(xmlns, "path");
+  tickPath.setAttributeNS(
     null,
     "d",
     "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.88-11.71L10 14.17l-1.88-1.88c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7c.39-.39.39-1.02 0-1.41-.39-.39-1.03-.39-1.42 0z"
   );
-  tickSVG.append(path4);
-  tickSVG.append(path5);
+  tickSVG.append(tickPath);
   toggleRead.append(tickSVG);
+  // read button --end--
 
+  // remove button --start--
   const remove = document.createElement("button");
   remove.classList.add("remove");
   remove.setAttribute("data-remove-index", uuid);
 
   const binSVG = document.createElementNS(xmlns, "svg");
   binSVG.setAttributeNS(null, "viewBox", "0 0 24 24");
-  const path6 = document.createElementNS(xmlns, "path");
-  path6.setAttributeNS(null, "path", "M0 0h24v24H0V0z");
-  path6.setAttributeNS(null, "fill", "none");
-  const path7 = document.createElementNS(xmlns, "path");
-  path7.setAttributeNS(
+  const binPath = document.createElementNS(xmlns, "path");
+  binPath.setAttributeNS(
     null,
     "d",
     "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"
   );
-  binSVG.append(path6);
-  binSVG.append(path7);
+  binSVG.append(binPath);
   remove.append(binSVG);
+  // remove button --end--
 
+  buttons.append(close);
   buttons.append(toggleFavourite);
   buttons.append(toggleRead);
   buttons.append(remove);
