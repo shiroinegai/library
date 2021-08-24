@@ -228,9 +228,23 @@ img {
   overflow: scroll;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+* + label {
+  margin-top: 0.5em;
+}
+
+label + input,
+textarea {
+  margin-top: 0.25em;
+}
+
 footer p {
   color: var(--dark-blue);
-  font-family: "Acme", sans-serif;
   margin: 2em 0;
   text-align: center;
 }
