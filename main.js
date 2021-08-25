@@ -77,12 +77,19 @@ function Book({ author, coverImage, favourite, pages, read, synopsis, title }) {
 Book.prototype = {
   remove() {
     library = library.filter((book) => book.id !== this.id);
+    document.querySelector(`[data-index="${this.id}"]`).remove();
   },
   toggleFavourite() {
     this.favourite = !this.favourite;
+    document
+      .querySelector(`[data-index="${this.id}"] .toggle-favourite svg`)
+      .classList.toggle("toggle-true");
   },
   toggleRead() {
     this.read = !this.read;
+    document
+      .querySelector(`[data-index="${this.id}"] .toggle-read svg`)
+      .classList.toggle("toggle-true");
   },
 };
 
@@ -90,6 +97,14 @@ function addBookToLibrary(book) {
   library.push(book);
   console.log("Added");
   displayBooks();
+}
+
+function getLibraryIndexByBookId(id) {
+  for (let i = 0; i < library.length; i++) {
+    if (library[i].id === id) {
+      return i;
+    }
+  }
 }
 
 function createBookNode(book) {
@@ -171,6 +186,11 @@ function createBookNode(book) {
 
   // favourite button --start--
   const toggleFavourite = document.createElement("button");
+  toggleFavourite.addEventListener("click", (e) => {
+    const i = getLibraryIndexByBookId(book.id);
+    library[i].toggleFavourite();
+    e.stopPropagation();
+  });
   toggleFavourite.classList.add("toggle-favourite");
 
   const starSVG = document.createElementNS(xmlns, "svg");
@@ -191,6 +211,11 @@ function createBookNode(book) {
 
   // read button --start--
   const toggleRead = document.createElement("button");
+  toggleRead.addEventListener("click", (e) => {
+    const i = getLibraryIndexByBookId(book.id);
+    library[i].toggleRead();
+    e.stopPropagation();
+  });
   toggleRead.classList.add("toggle-read");
 
   const tickSVG = document.createElementNS(xmlns, "svg");
@@ -210,6 +235,10 @@ function createBookNode(book) {
 
   // remove button --start--
   const remove = document.createElement("button");
+  remove.addEventListener("click", (e) => {
+    const i = getLibraryIndexByBookId(book.id);
+    library[i].remove();
+  });
   remove.classList.add("remove");
   remove.setAttribute("data-remove-index", book.id);
 

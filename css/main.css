@@ -131,7 +131,7 @@ article:active img {
     drop-shadow(0 0 0.125em var(--dark-blue));
   filter: drop-shadow(0 0 0.5em var(--dark-blue))
     drop-shadow(0 0 0.125em var(--dark-blue));
-  opacity: 0.5;
+  opacity: 0.33;
 }
 
 .book-buttons button:hover svg,
@@ -140,7 +140,7 @@ article:active img {
     drop-shadow(0 0 0.125em var(--blue));
   filter: drop-shadow(0 0 0.5em var(--blue))
     drop-shadow(0 0 0.125em var(--blue));
-  opacity: 0.8;
+  opacity: 0.66;
 }
 
 .toggle-favourite,
