@@ -91,7 +91,34 @@ const library = [
   },
 ];
 
+// DOM --start--
 const libraryNode = document.getElementById("library");
+
+const formModal = document.querySelector(".form-modal");
+
+const addBookButton = document.querySelector(".add-book-button");
+addBookButton.addEventListener("click", openFormModal);
+
+const cancelButton = document.querySelector(".cancel");
+cancelButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  closeFormModal();
+});
+
+function openFormModal() {
+  formModal.style.display = "flex";
+}
+
+function closeFormModal() {
+  formModal.style.display = "none";
+}
+
+function displayBooks() {
+  library.forEach((book) => {
+    libraryNode.append(createBookNode(book));
+  });
+}
+// DOM --end--
 
 function Book({ author, coverImage, favourite, pages, read, synopsis, title }) {
   this.author = author;
@@ -118,12 +145,6 @@ Book.prototype = {
 
 function addBookToLibrary(book) {
   library.push(book);
-}
-
-function displayBooks() {
-  library.forEach((book) => {
-    libraryNode.append(createBookNode(book));
-  });
 }
 
 function createBookNode(book) {
