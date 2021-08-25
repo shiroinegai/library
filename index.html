@@ -27,15 +27,15 @@
         <h2>New book</h2>
         <div class="form-segment">
           <label for="title">Title</label>
-          <input id="title" type="text" />
+          <input required id="title" type="text" />
           <label for="author">Author</label>
-          <input id="author" type="text" />
+          <input required id="author" type="text" />
           <label for="pages">Pages</label>
-          <input id="pages" type="number" min="0" />
+          <input required id="pages" type="number" min="0" />
           <label for="coverImage">Cover image URL</label>
-          <input id="coverImage" type="url" />
+          <input optional id="coverImage" type="url" />
           <label for="synopsis">Synopsis</label>
-          <textarea id="synopsis"></textarea>
+          <textarea optional id="synopsis"></textarea>
         </div>
         <div class="form-actions">
           <label for="favourite">

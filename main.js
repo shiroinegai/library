@@ -96,6 +96,15 @@ const libraryNode = document.getElementById("library");
 
 const formModal = document.querySelector(".form-modal");
 
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const bookData = getFormData();
+  const newBook = new Book(bookData);
+  addBookToLibrary(newBook);
+  closeFormModal();
+});
+
 const addBookButton = document.querySelector(".add-book-button");
 addBookButton.addEventListener("click", openFormModal);
 
@@ -113,7 +122,30 @@ function closeFormModal() {
   formModal.style.display = "none";
 }
 
+function getFormData() {
+  let author = document.getElementById("author").value;
+  let coverImage = document.getElementById("coverImage").value;
+  let favourite = document.getElementById("favourite").checked;
+  let pages = document.getElementById("pages").value;
+  let read = document.getElementById("read").checked;
+  let synopsis = document.getElementById("synopsis").value;
+  let title = document.getElementById("title").value;
+
+  if (!coverImage) {
+    coverImage =
+      "https://kbimages1-a.akamaihd.net/Images/empty_book_cover.webp";
+  }
+  if (!synopsis) {
+    synopsis = `I am sure that ${title} must be intriguing enough for ${author} to write ${pages} page${
+      pages > 1 ? "s" : ""
+    } of it.`;
+  }
+
+  return { author, coverImage, favourite, pages, read, synopsis, title };
+}
+
 function displayBooks() {
+  libraryNode.innerText = "";
   library.forEach((book) => {
     libraryNode.append(createBookNode(book));
   });
@@ -145,6 +177,8 @@ Book.prototype = {
 
 function addBookToLibrary(book) {
   library.push(book);
+  console.log("Added");
+  displayBooks();
 }
 
 function createBookNode(book) {
