@@ -78,25 +78,28 @@ Book.prototype = {
   remove() {
     library = library.filter((book) => book.id !== this.id);
     document.querySelector(`[data-index="${this.id}"]`).remove();
+    updateLocalStorage();
   },
   toggleFavourite() {
     this.favourite = !this.favourite;
     document
       .querySelector(`[data-index="${this.id}"] .toggle-favourite svg`)
       .classList.toggle("toggle-true");
+    updateLocalStorage();
   },
   toggleRead() {
     this.read = !this.read;
     document
       .querySelector(`[data-index="${this.id}"] .toggle-read svg`)
       .classList.toggle("toggle-true");
+    updateLocalStorage();
   },
 };
 
 function addBookToLibrary(book) {
   library.push(book);
-  console.log("Added");
-  displayBooks();
+  libraryNode.append(createBookNode(book));
+  updateLocalStorage();
 }
 
 function getLibraryIndexByBookId(id) {
@@ -358,16 +361,23 @@ function setPlaceholder() {
   localStorage.setItem("library", JSON.stringify(placeholder));
 }
 
-if (!localStorage.getItem("library")) {
-  setPlaceholder();
-} else {
-  library = JSON.parse(localStorage.getItem("library"));
-  for (let i = 0; i < library.length; i++) {
-    library[i] = Object.create(
-      Book.prototype,
-      Object.getOwnPropertyDescriptors(library[i])
-    );
-  }
+function updateLocalStorage() {
+  localStorage.setItem("library", JSON.stringify(library));
 }
 
-displayBooks();
+function initLibrary() {
+  if (!localStorage.getItem("library")) {
+    setPlaceholder();
+  } else {
+    library = JSON.parse(localStorage.getItem("library"));
+    for (let i = 0; i < library.length; i++) {
+      library[i] = Object.create(
+        Book.prototype,
+        Object.getOwnPropertyDescriptors(library[i])
+      );
+    }
+  }
+  displayBooks();
+}
+
+initLibrary();
