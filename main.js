@@ -75,14 +75,14 @@ function Book({ author, coverImage, favourite, pages, read, synopsis, title }) {
 }
 
 Book.prototype = {
-  deleteBook: () => {
-    console.log("deleteBook is called");
+  remove() {
+    library = library.filter((book) => book.id !== this.id);
   },
-  toggleFavouriteStatus: () => {
-    console.log("toggleFavouriteStatus is called");
+  toggleFavourite() {
+    this.favourite = !this.favourite;
   },
-  toggleReadStatus: () => {
-    console.log("toggleReadStatus is called");
+  toggleRead() {
+    this.read = !this.read;
   },
 };
 
