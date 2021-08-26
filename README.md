@@ -29,10 +29,17 @@ Just your run-of-the-mill vanilla HTML-CSS-JS trio.
 
 ## Screenshots
 
-![Home](/screenshots/home.png)
-![Add book](/screenshots/add_book.png)
-![Book](/screenshots/book.png)
-![Placeholder](/screenshots/placeholder.png)
+**Home**
+<img src="https://raw.githubusercontent.com/shiroinegai/library/main/screenshots/home.png" width="50%"/>
+
+**Add book**
+<img src="https://raw.githubusercontent.com/shiroinegai/library/main/screenshots/add_book.png" width="50%"/>
+
+**Book**
+<img src="https://raw.githubusercontent.com/shiroinegai/library/main/screenshots/book.png" width="50%"/>
+
+**Placeholder**
+<img src="https://raw.githubusercontent.com/shiroinegai/library/main/screenshots/placeholder.png" width="50%"/>
 
 ## Possible future enhancements
 
