@@ -55,4 +55,6 @@ Just your run-of-the-mill vanilla HTML-CSS-JS trio.
 
 ## Acknowledgments
 
+Project is also a submission to complete an assignment from [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library).
+
 Images sourced from [Rakuten kobo](https://www.kobo.com)
