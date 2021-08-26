@@ -368,15 +368,16 @@ function updateLocalStorage() {
 function initLibrary() {
   if (!localStorage.getItem("library")) {
     setPlaceholder();
-  } else {
-    library = JSON.parse(localStorage.getItem("library"));
-    for (let i = 0; i < library.length; i++) {
-      library[i] = Object.create(
-        Book.prototype,
-        Object.getOwnPropertyDescriptors(library[i])
-      );
-    }
   }
+
+  library = JSON.parse(localStorage.getItem("library"));
+  for (let i = 0; i < library.length; i++) {
+    library[i] = Object.create(
+      Book.prototype,
+      Object.getOwnPropertyDescriptors(library[i])
+    );
+  }
+
   displayBooks();
 }
 
